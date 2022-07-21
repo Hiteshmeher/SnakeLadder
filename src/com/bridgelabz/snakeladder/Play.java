@@ -5,7 +5,8 @@ package com.bridgelabz.snakeladder;
  *
  */
 public class Play {
-	
+	static final int WinningPosition = 100;
+
 	public void rolling() {
 		/**
 		 * initialize position is 0
@@ -15,28 +16,32 @@ public class Play {
 		 * if 1 then Ladder and will increase player position
 		 * if 2 then snake and will decrease player position 
 		 */
-		 int playerPosition = 0;
-	        System.out.println("\nPlayers starting Position is " +playerPosition);
-	        int number = 1 + (int)(Math.random() * 6);
-	        System.out.println("After rolling the dice i got " + number+ "\n");
-	        
-	        int option = (int) Math.floor(Math.random()*3);
-	        if (option == 0) {
-	            System.out.println("Sorry Don't want to Play !!!");
-	            System.out.println("Player current position is " + playerPosition);
-	        }
-	        else if (option == 1) {
-	            System.out.println("Wow... its Ladder");
-	            playerPosition+=number;
-	            System.out.println("Player current position is " +playerPosition);
-	        }
-	        else {
-	            System.out.println("Oops.... it's Snake");
-	            playerPosition-=number;
-	            if (playerPosition < 0) {
-	            	playerPosition = 0;
-	            }
-	            System.out.println("Player current position is " + playerPosition);
-	        }
-    }
+		int playerPosition = 0;
+		System.out.println("Players starting Position is " + playerPosition);
+		System.out.println("Roll dice to get number ");
+		while (playerPosition != WinningPosition) {
+			int number = 1 + (int) (Math.random() * 6);
+			int option = (int) Math.floor(Math.random() * 3);
+			if (option == 0) {
+			} else if (option == 1) {
+				System.out.println("wow !!! it's a Ladder");
+				if (playerPosition < WinningPosition) {
+					playerPosition = playerPosition + number;
+					System.out.println("Player's current position is " + playerPosition);
+
+				} else {
+					playerPosition = playerPosition - number;
+				}
+			} else {
+				System.out.println("Ohh No.... Snake");
+				playerPosition = playerPosition - number;
+				if (playerPosition < 0)
+					playerPosition = 0;
+				System.out.println("Player's current position is " + playerPosition);
+
+			}
+		}
+		System.out.println("Player's current position is " + playerPosition);
+	}
+    
 }
