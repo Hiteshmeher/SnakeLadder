@@ -14,7 +14,7 @@ public class SnakeLadder {
 		 * Creating Object of class Play
 		 * calling method
 		 */
-		System.out.println("< < < Welcome to Snake Ladder Game > > >");
+		System.out.println("< < < Welcome to Snake Ladder Game > > >\n");
 		Play P = new Play();
 		P.rolling();
 	}
