@@ -15,6 +15,7 @@ public class Play {
 		 * if 0 then No PLAY
 		 * if 1 then Ladder and will increase player position
 		 * if 2 then snake and will decrease player position 
+		 * continuing till player reaches 100 (winning position)
 		 */
 		int playerPosition = 0;
 		System.out.println("Players starting Position is " + playerPosition);
@@ -38,7 +39,6 @@ public class Play {
 				if (playerPosition < 0)
 					playerPosition = 0;
 				System.out.println("Player's current position is " + playerPosition);
-
 			}
 		}
 		System.out.println("Player's current position is " + playerPosition);
